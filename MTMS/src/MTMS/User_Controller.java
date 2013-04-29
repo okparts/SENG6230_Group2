@@ -77,10 +77,20 @@ public class User_Controller {
             if (!rs.next())
             {
                 this.err = "Invalid user ID or password.";
+                con.close();
+                Is_Connected = false;
                 return null;
             }
             temp = new User();
-            temp.UserID = UserID;
+            temp.UserID = rs.getString("UserID");
+            String realpp = rs.getString("Password");
+            if ((!temp.UserID.equals(UserID))||!realpp.equals(PWD))
+            {
+                this.err = "Invalid user ID or password.";
+                con.close();
+                Is_Connected = false;
+                return null;
+            }
             temp.FirstName = rs.getString("FirstName");
             temp.LastName = rs.getString("LastName");
             temp.BirthDate = rs.getDate("BirthDate");

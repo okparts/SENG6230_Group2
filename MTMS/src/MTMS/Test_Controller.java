@@ -68,7 +68,9 @@ public class Test_Controller {
     public ArrayList SearchTest(int TID, String IDType)
     {
         String sql = "";
-        if (IDType.equals("Patient"))
+        if (TID <= 0)
+            sql = "select * from Test";
+        else if (IDType.equals("Patient"))
             sql = "select * from Test where PatientID = " + String.valueOf(TID);
         else
             sql = "select * from Test where TestID = " + String.valueOf(TID);
@@ -324,12 +326,21 @@ public class Test_Controller {
 
         String Comm = this.GetComment(TestID);
         String[] tt = Comm.split(",");
-        if (tt.length<2)
-            Comm = "Text,";
-        else
+        if (tt.length>=2)
         {
             Comm = "Text,"+tt[1];
-        }    
+        }
+        else
+        {
+            if (Comm.indexOf(",")==0)
+            {
+                Comm = "Text," + tt[0];
+            }
+            else
+            {
+                Comm = "Text,";
+            }
+        }
                 
         getConnection();
         if (!Is_Connected)
@@ -363,11 +374,20 @@ public class Test_Controller {
 
         String Comm = this.GetComment(TestID);
         String[] tt = Comm.split(",");
-        if (tt.length<2)
-            Comm = FileType + ",";
+        if (tt.length>=2)
+        {
+            Comm = FileType + "," + tt[1];
+        }
         else
         {
-            Comm = FileType+","+tt[1];
+            if (Comm.indexOf(",")==0)
+            {
+                Comm = FileType + "," + tt[0];
+            }
+            else
+            {
+                Comm = FileType + ",";
+            }
         }
                 
         getConnection();
@@ -402,11 +422,18 @@ public class Test_Controller {
 
         String Comm = this.GetComment(TestID);
         String[] tt = Comm.split(",");
-        if (tt.length<2)
-            Comm = ",Text";
+        if (tt.length>=2)
+            Comm = tt[0]+",Text";
         else
         {
-            Comm = tt[0]+",Text";
+            if (Comm.indexOf(",")==0)
+            {
+                Comm = ",Text";
+            }
+            else
+            {
+                Comm = tt[0] +",Text";
+            }
         }
                 
         getConnection();
@@ -440,11 +467,18 @@ public class Test_Controller {
         
         String Comm = this.GetComment(TestID);
         String[] tt = Comm.split(",");
-        if (tt.length<2)
-            Comm = ","+FileType;
+        if (tt.length>=2)
+            Comm = tt[0]+"," + FileType;
         else
         {
-            Comm = tt[0]+","+FileType;
+            if (Comm.indexOf(",")==0)
+            {
+                Comm = ","+FileType;
+            }
+            else
+            {
+                Comm = tt[0] +","+ FileType;
+            }
         }
         
         getConnection();

@@ -75,7 +75,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         btnEditOthers = new javax.swing.JButton();
-        lblHint = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
         lblInfo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -86,6 +88,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         tbxNewPwd2 = new javax.swing.JPasswordField();
         btnChangePwd = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        lblHint = new javax.swing.JLabel();
         pnlPatientOps = new javax.swing.JPanel();
         pnlPatientInfo = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -112,6 +115,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
         btnPDelete = new javax.swing.JButton();
         btnPClear = new javax.swing.JButton();
         lblPHint = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btnTestOrder1 = new javax.swing.JButton();
         btnSearchTestByP = new javax.swing.JButton();
@@ -159,6 +165,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
         tbxTestDes2 = new javax.swing.JTextArea();
         btnOrderTest = new javax.swing.JButton();
         btnTClear = new javax.swing.JButton();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         pnlReportOps = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         lblRRStyle = new javax.swing.JLabel();
@@ -169,22 +177,14 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tbxResult = new javax.swing.JTextArea();
         btnInputResult = new javax.swing.JButton();
-        btnBrowse1 = new javax.swing.JButton();
-        tbxPath1 = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        btnDLResult = new javax.swing.JButton();
-        chxResultF = new javax.swing.JCheckBox();
         pnlReport = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
         tbxReportStatus = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        tbxPath2 = new javax.swing.JTextField();
-        btnBrowse2 = new javax.swing.JButton();
         btnInputReport = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         tbxReport = new javax.swing.JTextArea();
-        btnDLReport = new javax.swing.JButton();
-        chxReportF = new javax.swing.JCheckBox();
+        btnClearReport = new javax.swing.JButton();
+        btnFull = new javax.swing.JButton();
         tbxTestID = new javax.swing.JTextField();
         btnRetrieveTest = new javax.swing.JButton();
         pnlUserOps = new javax.swing.JPanel();
@@ -215,14 +215,18 @@ public class MTMS_GUI extends javax.swing.JFrame {
         tbxUPhone = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         cbxUUserType = new javax.swing.JComboBox();
-        lblUHint = new javax.swing.JLabel();
-        btnClear = new javax.swing.JButton();
         btnUAdd = new javax.swing.JButton();
         btnUUpdate = new javax.swing.JButton();
         btnUDelete = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
-        tbxUPwd = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        tbxUPwd = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
+        jLabel54 = new javax.swing.JLabel();
+        lblUHint = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblLoginName = new javax.swing.JLabel();
@@ -322,8 +326,11 @@ public class MTMS_GUI extends javax.swing.JFrame {
             }
         });
 
-        lblHint.setForeground(new java.awt.Color(0, 153, 51));
-        lblHint.setText("Wrong Format. Example: 00000");
+        jLabel60.setText("Format: YYYY/MM/DD");
+
+        jLabel61.setText("Format: 27858");
+
+        jLabel62.setText("Format: 252-123-4567");
 
         org.jdesktop.layout.GroupLayout pnlUserOthersLayout = new org.jdesktop.layout.GroupLayout(pnlUserOthers);
         pnlUserOthers.setLayout(pnlUserOthersLayout);
@@ -344,14 +351,19 @@ public class MTMS_GUI extends javax.swing.JFrame {
                         .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxBirthDate)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxAddress1)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxPhone)
-                            .add(tbxZipcode)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxAddress2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxFirstName)
-                            .add(tbxLastName)))
+                            .add(tbxLastName)
+                            .add(pnlUserOthersLayout.createSequentialGroup()
+                                .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel61)
+                                    .add(jLabel60)
+                                    .add(tbxZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(tbxPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 152, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jLabel62))
+                                .add(0, 127, Short.MAX_VALUE))))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlUserOthersLayout.createSequentialGroup()
-                        .add(lblHint)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 87, Short.MAX_VALUE)
+                        .add(0, 0, Short.MAX_VALUE)
                         .add(btnEditOthers)))
                 .addContainerGap())
         );
@@ -364,17 +376,17 @@ public class MTMS_GUI extends javax.swing.JFrame {
                         .add(60, 60, 60)
                         .add(tbxBirthDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(tbxAddress1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jLabel60)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(tbxAddress1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel10))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(tbxAddress2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(tbxZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel11))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(tbxPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jLabel12)))
+                            .add(jLabel11)))
                     .add(pnlUserOthersLayout.createSequentialGroup()
                         .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(jLabel6)
@@ -384,14 +396,18 @@ public class MTMS_GUI extends javax.swing.JFrame {
                             .add(jLabel7)
                             .add(tbxLastName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel8)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel10)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jLabel8)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel61)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlUserOthersLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(btnEditOthers)
-                    .add(lblHint))
-                .add(38, 38, 38))
+                    .add(tbxPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel12))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jLabel62)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btnEditOthers)
+                .add(11, 11, 11))
         );
 
         lblInfo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -457,22 +473,30 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Other Details:");
 
+        lblHint.setForeground(new java.awt.Color(0, 153, 51));
+        lblHint.setText("Wrong Format. Example: 00000");
+
         org.jdesktop.layout.GroupLayout pnlUserInfoLayout = new org.jdesktop.layout.GroupLayout(pnlUserInfo);
         pnlUserInfo.setLayout(pnlUserInfoLayout);
         pnlUserInfoLayout.setHorizontalGroup(
             pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(pnlUserInfoLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, lblInfo)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, pnlUserBasics, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(pnlUserInfoLayout.createSequentialGroup()
-                        .add(jLabel2)
-                        .add(0, 0, Short.MAX_VALUE))
-                    .add(pnlUserOthers, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                        .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, lblInfo)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, pnlUserBasics, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(pnlUserInfoLayout.createSequentialGroup()
+                                .add(jLabel2)
+                                .add(0, 0, Short.MAX_VALUE))
+                            .add(pnlUserOthers, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlUserInfoLayout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(lblHint)))
                 .addContainerGap())
         );
         pnlUserInfoLayout.setVerticalGroup(
@@ -483,13 +507,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(lblInfo)
                     .add(jLabel2))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                .add(pnlUserInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(pnlUserInfoLayout.createSequentialGroup()
                         .add(pnlUserBasics, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(4, 4, 4)
-                        .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(pnlUserOthers, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
-                .addContainerGap(116, Short.MAX_VALUE))
+                        .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(pnlUserOthers, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 351, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 128, Short.MAX_VALUE)
+                .add(lblHint)
+                .addContainerGap())
         );
 
         tbpMain.addTab("My Info", pnlUserInfo);
@@ -551,6 +577,12 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblPHint.setForeground(new java.awt.Color(0, 153, 51));
         lblPHint.setText("Wrong format. Example: 00000");
 
+        jLabel63.setText("Format: YYYY/MM/DD");
+
+        jLabel64.setText("Format: 27858");
+
+        jLabel65.setText("Format: 252-123-4567");
+
         org.jdesktop.layout.GroupLayout pnlPatientInfoLayout = new org.jdesktop.layout.GroupLayout(pnlPatientInfo);
         pnlPatientInfo.setLayout(pnlPatientInfoLayout);
         pnlPatientInfoLayout.setHorizontalGroup(
@@ -559,58 +591,61 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(pnlPatientInfoLayout.createSequentialGroup()
-                        .add(6, 6, 6)
-                        .add(lblPHint)
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel17)
+                            .add(jLabel18)
+                            .add(jLabel19))
+                        .add(40, 40, 40)
+                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(tbxPFirstName)
+                            .add(pnlPatientInfoLayout.createSequentialGroup()
+                                .add(lblPID)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(btnPClear))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxPLastName)))
+                    .add(pnlPatientInfoLayout.createSequentialGroup()
+                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel22)
+                            .add(jLabel23)
+                            .add(jLabel24))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(tbxPAddress2)
+                            .add(tbxPAddress1)))
                     .add(pnlPatientInfoLayout.createSequentialGroup()
                         .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(pnlPatientInfoLayout.createSequentialGroup()
-                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel17)
-                                    .add(jLabel18)
-                                    .add(jLabel19))
-                                .add(40, 40, 40)
-                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(tbxPFirstName)
-                                    .add(pnlPatientInfoLayout.createSequentialGroup()
-                                        .add(lblPID)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(btnPClear))
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxPLastName)))
-                            .add(pnlPatientInfoLayout.createSequentialGroup()
-                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jLabel22)
-                                    .add(jLabel23)
-                                    .add(jLabel24))
+                                .add(btnPCreate)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(tbxPAddress2)
-                                    .add(tbxPAddress1)))
+                                .add(btnPUpdate)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(btnPDelete))
                             .add(pnlPatientInfoLayout.createSequentialGroup()
-                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(pnlPatientInfoLayout.createSequentialGroup()
-                                        .add(btnPCreate)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(btnPUpdate)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(btnPDelete))
-                                    .add(pnlPatientInfoLayout.createSequentialGroup()
-                                        .add(jLabel20)
-                                        .add(66, 66, 66)
-                                        .add(cbxPGender, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(pnlPatientInfoLayout.createSequentialGroup()
-                                        .add(jLabel25)
-                                        .add(49, 49, 49)
-                                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(tbxPPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(tbxPZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(tbxPDoctorID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 186, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                                .add(0, 23, Short.MAX_VALUE))
+                                .add(jLabel20)
+                                .add(66, 66, 66)
+                                .add(cbxPGender, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(pnlPatientInfoLayout.createSequentialGroup()
-                                .add(jLabel21)
-                                .add(48, 48, 48)
-                                .add(tbxPBirthDate)))
-                        .addContainerGap())))
+                                .add(jLabel25)
+                                .add(49, 49, 49)
+                                .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(tbxPPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(tbxPZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(tbxPDoctorID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 186, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jLabel64)
+                                    .add(jLabel65))))
+                        .add(0, 19, Short.MAX_VALUE))
+                    .add(pnlPatientInfoLayout.createSequentialGroup()
+                        .add(jLabel21)
+                        .add(48, 48, 48)
+                        .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(pnlPatientInfoLayout.createSequentialGroup()
+                                .add(jLabel63)
+                                .add(0, 0, Short.MAX_VALUE))
+                            .add(tbxPBirthDate)))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlPatientInfoLayout.createSequentialGroup()
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(lblPHint)))
+                .addContainerGap())
         );
         pnlPatientInfoLayout.setVerticalGroup(
             pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -636,7 +671,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel21)
                     .add(tbxPBirthDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel63)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel22)
                     .add(tbxPAddress1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -647,9 +684,13 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(tbxPZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel23))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel64)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(tbxPPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel24))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel65)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlPatientInfoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(tbxPDoctorID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -659,9 +700,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(btnPCreate)
                     .add(btnPUpdate)
                     .add(btnPDelete))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 58, Short.MAX_VALUE)
                 .add(lblPHint)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -682,7 +723,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(btnSearchTestByP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 18, Short.MAX_VALUE)
                 .add(btnTestOrder1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -733,7 +774,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                                 .add(tbxPSearch)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(btnPSearch))
-                            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))
+                            .add(jScrollPane1))
                         .addContainerGap())))
         );
         jPanel6Layout.setVerticalGroup(
@@ -748,7 +789,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(tbxPSearch, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnPSearch))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane1)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -761,7 +802,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(pnlPatientOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(jPanel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .add(10, 10, 10)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(pnlPatientInfo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -770,9 +811,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(pnlPatientOpsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(pnlPatientOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(pnlPatientOpsLayout.createSequentialGroup()
-                        .add(pnlPatientInfo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, Short.MAX_VALUE))
+                    .add(pnlPatientInfo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(pnlPatientOpsLayout.createSequentialGroup()
                         .add(jPanel6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -836,7 +875,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(jPanel4Layout.createSequentialGroup()
                         .add(jLabel26)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(cbxTSearchType, 0, 231, Short.MAX_VALUE))
+                        .add(cbxTSearchType, 0, 220, Short.MAX_VALUE))
                     .add(jPanel4Layout.createSequentialGroup()
                         .add(tbxTSearch)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -856,7 +895,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(tbxTSearch, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnTSearch))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(btnFillResult)
                 .addContainerGap())
@@ -1034,7 +1073,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(pnlNewTestLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(btnTClear, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnOrderTest, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .add(btnOrderTest, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)))
                     .add(pnlNewTestLayout.createSequentialGroup()
                         .add(jLabel36)
                         .add(18, 18, 18)
@@ -1064,10 +1103,16 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(pnlNewTestLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(pnlNewTestLayout.createSequentialGroup()
                         .add(jLabel36)
-                        .add(0, 56, Short.MAX_VALUE))
-                    .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(jScrollPane4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        jLabel55.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel55.setText("Order A Test");
+
+        jLabel56.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
+        jLabel56.setText("Test Information");
 
         org.jdesktop.layout.GroupLayout pnlTestOpsLayout = new org.jdesktop.layout.GroupLayout(pnlTestOps);
         pnlTestOps.setLayout(pnlTestOpsLayout);
@@ -1076,10 +1121,19 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(pnlTestOpsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(10, 10, 10)
-                .add(pnlTestOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(pnlNewTest, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(pnlTestInfo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(pnlTestOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(pnlTestOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(pnlTestOpsLayout.createSequentialGroup()
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                            .add(jLabel56))
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlTestOpsLayout.createSequentialGroup()
+                            .add(4, 4, 4)
+                            .add(pnlTestInfo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                    .add(pnlTestOpsLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(pnlTestOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel55)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlNewTest, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         pnlTestOpsLayout.setVerticalGroup(
@@ -1087,11 +1141,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(pnlTestOpsLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(pnlTestOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(pnlTestOpsLayout.createSequentialGroup()
+                        .add(jLabel56)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(pnlTestInfo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 231, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(pnlNewTest, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(jLabel55)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(pnlNewTest, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(jPanel4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -1114,7 +1172,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jScrollPane5.setHorizontalScrollBar(null);
 
         tbxResult.setColumns(20);
+        tbxResult.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         tbxResult.setRows(5);
+        tbxResult.setWrapStyleWord(true);
         jScrollPane5.setViewportView(tbxResult);
 
         btnInputResult.setText("Update");
@@ -1124,43 +1184,20 @@ public class MTMS_GUI extends javax.swing.JFrame {
             }
         });
 
-        btnBrowse1.setText(">>");
-
-        jLabel40.setText("File://");
-
-        btnDLResult.setText("Download");
-
-        chxResultF.setText("Use File");
-
         org.jdesktop.layout.GroupLayout jPanel7Layout = new org.jdesktop.layout.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
                 .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel7Layout.createSequentialGroup()
-                                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jPanel7Layout.createSequentialGroup()
-                                        .add(jLabel38)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(tbxResultStatus, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(jPanel7Layout.createSequentialGroup()
-                                        .add(207, 207, 207)
-                                        .add(jLabel40)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                        .add(tbxPath1)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(btnBrowse1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jScrollPane5)))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .add(chxResultF)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnDLResult)
+                        .add(jLabel38)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btnInputResult, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(tbxResultStatus, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(btnInputResult, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jScrollPane5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -1170,16 +1207,10 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel38)
                     .add(tbxResultStatus, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnBrowse1)
-                    .add(tbxPath1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel40))
+                    .add(btnInputResult))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel7Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(btnInputResult)
-                    .add(btnDLResult)
-                    .add(chxResultF)))
+                .add(jScrollPane5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pnlReport.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1188,10 +1219,6 @@ public class MTMS_GUI extends javax.swing.JFrame {
 
         tbxReportStatus.setEditable(false);
         tbxReportStatus.setText("Not updated");
-
-        jLabel42.setText("File://");
-
-        btnBrowse2.setText(">>");
 
         btnInputReport.setText("Update");
         btnInputReport.addActionListener(new java.awt.event.ActionListener() {
@@ -1203,12 +1230,24 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jScrollPane6.setHorizontalScrollBar(null);
 
         tbxReport.setColumns(20);
+        tbxReport.setFont(new java.awt.Font("Courier New", 0, 13)); // NOI18N
         tbxReport.setRows(5);
+        tbxReport.setWrapStyleWord(true);
         jScrollPane6.setViewportView(tbxReport);
 
-        btnDLReport.setText("Download");
+        btnClearReport.setText("Back");
+        btnClearReport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearReportActionPerformed(evt);
+            }
+        });
 
-        chxReportF.setText("Use File");
+        btnFull.setText("Full Report");
+        btnFull.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFullActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout pnlReportLayout = new org.jdesktop.layout.GroupLayout(pnlReport);
         pnlReport.setLayout(pnlReportLayout);
@@ -1217,23 +1256,17 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(pnlReportLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(pnlReportLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane6)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, pnlReportLayout.createSequentialGroup()
-                        .add(chxReportF)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnDLReport)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btnInputReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jScrollPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE)
                     .add(pnlReportLayout.createSequentialGroup()
                         .add(jLabel41)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(tbxReportStatus, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 107, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(btnInputReport, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel42)
+                        .add(btnClearReport)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(tbxPath2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btnBrowse2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(btnFull)))
                 .addContainerGap())
         );
         pnlReportLayout.setVerticalGroup(
@@ -1243,17 +1276,12 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(pnlReportLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel41)
                     .add(tbxReportStatus, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel42)
-                    .add(btnBrowse2)
-                    .add(tbxPath2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pnlReportLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(btnInputReport)
-                    .add(btnDLReport)
-                    .add(chxReportF))
-                .add(4, 4, 4))
+                    .add(btnClearReport)
+                    .add(btnFull))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         btnRetrieveTest.setText("Change");
@@ -1356,7 +1384,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jLabel43)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(cbxUSearchType, 0, 234, Short.MAX_VALUE)))
+                        .add(cbxUSearchType, 0, 208, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -1371,7 +1399,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                     .add(tbxUSearch, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(btnUSearch))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .add(jScrollPane7)
                 .addContainerGap())
         );
 
@@ -1398,16 +1426,6 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jLabel53.setText("User Type:");
 
         cbxUUserType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "LABTECH", "DOCTOR", "ADMIN" }));
-
-        lblUHint.setForeground(new java.awt.Color(0, 153, 51));
-        lblUHint.setText("Wrong format. Example: 00000");
-
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
 
         btnUAdd.setText("Add");
         btnUAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -1439,6 +1457,19 @@ public class MTMS_GUI extends javax.swing.JFrame {
 
         jLabel49.setText("Password:");
 
+        jLabel57.setText("Format: YYYY/MM/DD");
+
+        jLabel58.setText("Format: 27858");
+
+        jLabel59.setText("Format: 252-000-1234");
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel5Layout = new org.jdesktop.layout.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -1446,6 +1477,14 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel5Layout.createSequentialGroup()
+                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel5Layout.createSequentialGroup()
+                                .add(jLabel52)
+                                .add(1, 1, 1))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel50))
+                        .add(30, 30, 30)
+                        .add(tbxUAddress1))
                     .add(jPanel5Layout.createSequentialGroup()
                         .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel44)
@@ -1457,51 +1496,48 @@ public class MTMS_GUI extends javax.swing.JFrame {
                             .add(tbxULastName)
                             .add(tbxUFirstName)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxUBirthDate)
-                            .add(tbxUUserID)))
-                    .add(jPanel5Layout.createSequentialGroup()
-                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel50)
-                            .add(jLabel51)
-                            .add(jLabel52))
-                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(tbxUUserID)
                             .add(jPanel5Layout.createSequentialGroup()
-                                .add(30, 30, 30)
-                                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(tbxUAddress2)
-                                    .add(tbxUAddress1)))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(btnClear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                                .add(jLabel57)
+                                .add(0, 0, Short.MAX_VALUE))))
                     .add(jPanel5Layout.createSequentialGroup()
-                        .add(jLabel49)
-                        .add(18, 18, 18)
-                        .add(tbxUPwd)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btnUDelete, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel5Layout.createSequentialGroup()
-                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jPanel5Layout.createSequentialGroup()
-                                .add(jLabel53)
-                                .add(18, 18, 18)
-                                .add(cbxUUserType, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jPanel5Layout.createSequentialGroup()
-                                .add(85, 85, 85)
-                                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(tbxUPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(tbxUZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(btnUAdd, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnUUpdate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(85, 85, 85)
+                        .add(tbxUAddress2))
                     .add(jPanel5Layout.createSequentialGroup()
                         .add(jLabel48)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(lblUEnrollDate)
                         .add(0, 0, Short.MAX_VALUE))
                     .add(jPanel5Layout.createSequentialGroup()
-                        .add(btnReset, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 142, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(lblUHint)))
+                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel5Layout.createSequentialGroup()
+                                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jPanel5Layout.createSequentialGroup()
+                                        .add(jLabel53)
+                                        .add(18, 18, 18)
+                                        .add(cbxUUserType, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(jPanel5Layout.createSequentialGroup()
+                                        .add(jLabel51)
+                                        .add(31, 31, 31)
+                                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(tbxUPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(tbxUZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(jLabel58)
+                                            .add(jLabel59))))
+                                .add(0, 16, Short.MAX_VALUE))
+                            .add(jPanel5Layout.createSequentialGroup()
+                                .add(jLabel49)
+                                .add(18, 18, 18)
+                                .add(tbxUPwd)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(btnUAdd, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(btnUUpdate, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, btnUDelete, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(btnClear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
+            .add(jPanel5Layout.createSequentialGroup()
+                .add(btnReset, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 142, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -1523,7 +1559,9 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(tbxUBirthDate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel47))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel57)
+                .add(7, 7, 7)
                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel48)
                     .add(lblUEnrollDate))
@@ -1534,32 +1572,43 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(tbxUAddress2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(tbxUZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel51)
-                    .add(btnClear))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(tbxUPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel52)
-                    .add(btnUAdd))
+                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jPanel5Layout.createSequentialGroup()
+                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(tbxUZipcode, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel51))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel58)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(tbxUPhone, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jLabel52))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel59))
+                    .add(jPanel5Layout.createSequentialGroup()
+                        .add(btnClear)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(btnUAdd)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(cbxUUserType, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel53)
                     .add(btnUUpdate))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel49)
                     .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(btnUDelete)
-                        .add(tbxUPwd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(jLabel49))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, tbxUPwd, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel5Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(btnReset)
-                    .add(lblUHint))
-                .add(49, 49, 49))
+                .add(btnReset)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
+
+        jLabel54.setText("To add a user, please press 'Clear' first.");
+
+        lblUHint.setForeground(new java.awt.Color(0, 153, 51));
+        lblUHint.setText("Wrong format. Example: 00000");
 
         org.jdesktop.layout.GroupLayout pnlUserOpsLayout = new org.jdesktop.layout.GroupLayout(pnlUserOps);
         pnlUserOps.setLayout(pnlUserOpsLayout);
@@ -1567,18 +1616,28 @@ public class MTMS_GUI extends javax.swing.JFrame {
             pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(pnlUserOpsLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel54)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, lblUHint))
                 .addContainerGap())
         );
         pnlUserOpsLayout.setVerticalGroup(
             pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(pnlUserOpsLayout.createSequentialGroup()
-                .add(pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 422, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap()
+                .add(pnlUserOpsLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(pnlUserOpsLayout.createSequentialGroup()
+                        .add(jLabel54)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(lblUHint)))
+                .addContainerGap())
         );
 
         tbpMain.addTab("User Management", pnlUserOps);
@@ -1598,12 +1657,10 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblLoginName.setText("Wecome, Guest!");
         lblLoginName.setToolTipText("");
 
+        tbxError.setEditable(false);
+        tbxError.setBackground(new java.awt.Color(240, 240, 240));
+        tbxError.setFont(new java.awt.Font("Lucida Grande", 1, 14)); // NOI18N
         tbxError.setForeground(new java.awt.Color(0, 153, 51));
-        tbxError.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbxErrorActionPerformed(evt);
-            }
-        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1612,17 +1669,16 @@ public class MTMS_GUI extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(15, 15, 15)
                 .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 249, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(lblLoginName)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(btnLogout))
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(tbpMain, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .add(tbpMain))
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(tbxError)
-                .addContainerGap())
+                .add(tbxError))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1635,8 +1691,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(tbpMain)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(tbxError, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .add(tbxError, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -1663,6 +1718,17 @@ public class MTMS_GUI extends javax.swing.JFrame {
         tbxNDoctorID.setText(ThisUser.UserID);
         btnTUpdate.setEnabled(false);
         btnTDelete.setEnabled(false);
+        
+        btnTSearch.getRootPane().setDefaultButton(btnTSearch);
+        btnPSearch.getRootPane().setDefaultButton(btnPSearch);
+        btnUSearch.getRootPane().setDefaultButton(btnUSearch);
+        
+        tbxError.setBackground(this.getBackground());
+        
+        tbxReport.setLineWrap(true);
+        tbxReport.setWrapStyleWord(true);
+        tbxResult.setLineWrap(true);
+        tbxResult.setWrapStyleWord(true);
 
         RenderRR(new Test());
         ShowUInfo(new User());
@@ -1693,20 +1759,58 @@ public class MTMS_GUI extends javax.swing.JFrame {
     private void btnEditOthersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditOthersActionPerformed
         // TODO add your handling code here:
         lblHint.setVisible(false);
-        String fn = tbxFirstName.getText().trim().replace("'", "");
-        if (fn.equals(""))
+        Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
+        String fn = tbxFirstName.getText().trim();
+        if (!namepattern.matcher(fn).matches())
         {
-            tbxError.setText("Empty first name.");
+            tbxError.setText("Invalid first name.");
+            lblHint.setText("Unacceptable first name.");
+            lblHint.setVisible(true);
             return ;
         }
-        String ln = tbxLastName.getText().trim().replace("'", "");
-        if (ln.equals(""))
+        fn = fn.replace("'", "\\'");
+        String ln = tbxLastName.getText().trim();
+        if (!namepattern.matcher(ln).matches())
         {
-            tbxError.setText("Empty last name.");
+            tbxError.setText("Invalid last name.");
+            lblHint.setText("Unacceptable last name.");
+            lblHint.setVisible(true);
             return ;
         }
+        ln = ln.replace("'", "\\'"); 
+        //String fn = tbxFirstName.getText().trim().replace("'", "\\'");
+        //if (fn.equals(""))
+        //{
+        //    tbxError.setText("Empty first name.");
+        //    return ;
+        //}
+        //String ln = tbxLastName.getText().trim().replace("'", "\\'");
+        //if (ln.equals(""))
+        //{
+        //    tbxError.setText("Empty last name.");
+        //    return ;
+        //}
+        Pattern pattern = Pattern.compile("[0-9]{4}/[0-9]{2}/[0-9]{2}");
+        Pattern pattern2 = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date bd = new Date();
+        String tbd = tbxBirthDate.getText();
+        if (pattern.matcher(tbd).matches())
+        {
+            //bd = sdf.parse(tbxBirthDate.getText());
+            sdf = new SimpleDateFormat("yyyy/MM/dd");
+        }
+        else if (pattern2.matcher(tbd).matches())
+        {
+            sdf = new SimpleDateFormat("MM/dd/yyyy");
+        }
+        else
+        {
+            tbxError.setText("Invalid birthdate.");
+            lblHint.setText("Wrong Format. Example: "+"2000/01/01");
+            lblHint.setVisible(true);
+            return ;
+        }
         try
         {
             bd = sdf.parse(tbxBirthDate.getText());
@@ -1718,15 +1822,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblHint.setVisible(true);
             return ;
         }
-        String Address = tbxAddress1.getText().replace("'", "").replace(";", "");
+        String Address = tbxAddress1.getText().replace("'", "\\'").replace(";", "");
         Address +=";";
-        Address += tbxAddress2.getText().replace("'", "").replace(";", "");
+        Address += tbxAddress2.getText().replace("'", "\\'").replace(";", "");
         if (Address.equals(";"))
         {
             tbxError.setText("Empty address.");
             return ;
         }
-        Pattern pattern = Pattern.compile("[0-9]{5}");
+        pattern = Pattern.compile("[0-9]{5}");
         
         String zc = tbxZipcode.getText().trim().replace("'", "");
         if (!pattern.matcher(zc).matches())
@@ -1746,10 +1850,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblHint.setVisible(true);
             return ;
         }
-        if (ph.length()<=10)
-        {
-            ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
-        }
+        ph = ph.replace("-", "");
+        ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
         
         User_Controller UC = new User_Controller("localhost", DBName, DBAccount, DBPwd);
         boolean flag = UC.UpdateUser(ThisUser.UserID, fn, ln, bd, Address, zc, ph);
@@ -1812,7 +1914,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
     //Clear patient information
     private void btnPClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPClearActionPerformed
         // TODO add your handling code here:
-         ClearPInfo();
+        lblPHint.setVisible(false);
+        ClearPInfo();
     }//GEN-LAST:event_btnPClearActionPerformed
   
     //Add a new patient
@@ -1824,20 +1927,46 @@ public class MTMS_GUI extends javax.swing.JFrame {
             tbxError.setText("Pemission denied.");
             return ;
         }
-        String fn = tbxPFirstName.getText().trim().replace("'", "");
-        if (fn.equals(""))
+        Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
+        String fn = tbxPFirstName.getText().trim();
+        if (!namepattern.matcher(fn).matches())
         {
-            tbxError.setText("Empty first name.");
+            tbxError.setText("Invalid first name.");
+            lblPHint.setText("Unacceptable first name.");
+            lblPHint.setVisible(true);
             return ;
         }
-        String ln = tbxPLastName.getText().trim().replace("'", "");
-        if (ln.equals(""))
+        fn = fn.replace("'", "\\'");
+        String ln = tbxPLastName.getText().trim();
+        if (!namepattern.matcher(ln).matches())
         {
-            tbxError.setText("Empty last name.");
+            tbxError.setText("Invalid last name.");
+            lblPHint.setText("Unacceptable last name.");
+            lblPHint.setVisible(true);
             return ;
         }
+        ln = ln.replace("'", "\\'"); 
+        Pattern pattern = Pattern.compile("[0-9]{4}/[0-9]{2}/[0-9]{2}");
+        Pattern pattern2 = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date bd = new Date();
+        String tbd = tbxPBirthDate.getText();
+        if (pattern.matcher(tbd).matches())
+        {
+            //bd = sdf.parse(tbxBirthDate.getText());
+            sdf = new SimpleDateFormat("yyyy/MM/dd");
+        }
+        else if (pattern2.matcher(tbd).matches())
+        {
+            sdf = new SimpleDateFormat("MM/dd/yyyy");
+        }
+        else
+        {
+            tbxError.setText("Invalid birthdate.");
+            lblPHint.setText("Wrong Format. Example: "+"2000/01/01");
+            lblPHint.setVisible(true);
+            return ;
+        }
         try
         {
             bd = sdf.parse(tbxPBirthDate.getText());
@@ -1849,15 +1978,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblPHint.setVisible(true);
             return ;
         }
-        String Address = tbxPAddress1.getText().replace("'", "").replace(";", "");
+        String Address = tbxPAddress1.getText().replace("'", "\\'").replace(";", "");
         Address +=";";
-        Address += tbxPAddress2.getText().replace("'", "").replace(";", "");
+        Address += tbxPAddress2.getText().replace("'", "\\'").replace(";", "");
         if (Address.equals(";"))
         {
             tbxError.setText("Empty address.");
             return ;
         }
-        Pattern pattern = Pattern.compile("[0-9]{5}");
+        pattern = Pattern.compile("[0-9]{5}");
         
         String zc = tbxPZipcode.getText().trim().replace("'", "");
         if (!pattern.matcher(zc).matches())
@@ -1877,10 +2006,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblPHint.setVisible(true);
             return ;
         }
-        if (ph.length()<=10)
-        {
-            ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
-        }
+        ph = ph.replace("-", "");
+        ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
         Patient_Controller PC = new Patient_Controller("localhost", DBName, DBAccount, DBPwd);
         
         int id = PC.CreatePatient(fn, ln, (cbxPGender.getSelectedIndex()==0), bd, Address, zc, ph, ThisUser.UserID);
@@ -1911,7 +2038,13 @@ public class MTMS_GUI extends javax.swing.JFrame {
         if (n<0) return;
         
         Patient p = (Patient)ReturnedPatients.get(n);
-        ShowPInfo(p);    
+        if ((p.DoctorID.equals(ThisUser.UserID))||(ThisUser.UserType==User.U_Types.ADMIN))
+            ShowPInfo(p);    
+        else
+        {
+            ShowPInfo(new Patient());
+            tbxError.setText("Not your patient. Permission denied.");
+        }
     }//GEN-LAST:event_lslPatientsMousePressed
 
     //Update information of a patient
@@ -1923,23 +2056,54 @@ public class MTMS_GUI extends javax.swing.JFrame {
             return;
         if(tbxPDoctorID.getText().equals(""))
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
-        String fn = tbxPFirstName.getText().trim().replace("'", "");
-        if (fn.equals(""))
+        if((!tbxPDoctorID.getText().equals(ThisUser.UserID))&&(ThisUser.UserType!=User.U_Types.ADMIN))
         {
-            tbxError.setText("Empty first name.");
+            tbxError.setText("Not your patient. Permission denined");
             return ;
         }
-        String ln = tbxPLastName.getText().trim().replace("'", "");
-        if (ln.equals(""))
+        Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
+        String fn = tbxPFirstName.getText().trim();
+        if (!namepattern.matcher(fn).matches())
         {
-            tbxError.setText("Empty last name.");
+            tbxError.setText("Invalid first name.");
+            lblPHint.setText("Unacceptable first name.");
+            lblPHint.setVisible(true);
             return ;
         }
+        fn = fn.replace("'", "\\'");
+        String ln = tbxPLastName.getText().trim();
+        if (!namepattern.matcher(ln).matches())
+        {
+            tbxError.setText("Invalid last name.");
+            lblPHint.setText("Unacceptable last name.");
+            lblPHint.setVisible(true);
+            return ;
+        }
+        ln = ln.replace("'", "\\'"); 
+        Pattern pattern = Pattern.compile("[0-9]{4}/[0-9]{2}/[0-9]{2}");
+        Pattern pattern2 = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date bd = new Date();
+        String tbd = tbxPBirthDate.getText();
+        if (pattern.matcher(tbd).matches())
+        {
+            //bd = sdf.parse(tbxBirthDate.getText());
+            sdf = new SimpleDateFormat("yyyy/MM/dd");
+        }
+        else if (pattern2.matcher(tbd).matches())
+        {
+            sdf = new SimpleDateFormat("MM/dd/yyyy");
+        }
+        else
+        {
+            tbxError.setText("Invalid birthdate.");
+            lblPHint.setText("Wrong Format. Example: "+"2000/01/01");
+            lblPHint.setVisible(true);
+            return ;
+        }
         try
         {
             bd = sdf.parse(tbxPBirthDate.getText());
@@ -1951,15 +2115,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblPHint.setVisible(true);
             return ;
         }
-        String Address = tbxPAddress1.getText().replace("'", "").replace(";", "");
+        String Address = tbxPAddress1.getText().replace("'", "\\'").replace(";", "");
         Address +=";";
-        Address += tbxPAddress2.getText().replace("'", "").replace(";", "");
+        Address += tbxPAddress2.getText().replace("'", "\\'").replace(";", "");
         if (Address.equals(";"))
         {
             tbxError.setText("Empty address.");
             return ;
         }
-        Pattern pattern = Pattern.compile("[0-9]{5}");
+        pattern = Pattern.compile("[0-9]{5}");
         
         String zc = tbxPZipcode.getText().trim().replace("'", "");
         if (!pattern.matcher(zc).matches())
@@ -1979,13 +2143,11 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblPHint.setVisible(true);
             return ;
         }
-        if (ph.length()<=10)
-        {
-            ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
-        }
+        ph = ph.replace("-", "");
+        ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
         Patient_Controller PC = new Patient_Controller("localhost", DBName, DBAccount, DBPwd);
         
-        boolean flag = PC.UpdatePatient(pid, fn, ln, (cbxPGender.getSelectedIndex()==0), bd, Address, zc, ph, ThisUser.UserID);
+        boolean flag = PC.UpdatePatient(pid, fn, ln, (cbxPGender.getSelectedIndex()==0), bd, Address, zc, ph, tbxPDoctorID.getText());
         if(!flag)
         {
             tbxError.setText(PC.err);
@@ -1993,8 +2155,10 @@ public class MTMS_GUI extends javax.swing.JFrame {
         }
         
         String key = tbxPSearch.getText().trim().replace("'", "");
-        int Method  = cbxPSearchType.getSelectedIndex();
-        int tt = lslPatients.getSelectedIndex();
+        //int Method  = cbxPSearchType.getSelectedIndex();
+        int Method = 0;
+        //int tt = lslPatients.getSelectedIndex();
+        int tt = pid;
         SearchPatients(Method, key);
         tbxError.setText("Updated Patient #" + pid +" successfully.");
         try
@@ -2012,6 +2176,11 @@ public class MTMS_GUI extends javax.swing.JFrame {
         int pid = Integer.parseInt(lblPID.getText());
         if (pid<=0)
             return;
+        if ((ThisUser.UserType!=User.U_Types.ADMIN)&&(!tbxPDoctorID.getText().equals(ThisUser.UserID)))
+        {
+            tbxError.setText("Permission denied.");
+            return;
+        }
         String msg = "You are about to delete patient #"+String.valueOf(pid)+". \r\nDo you wish to continue?";
         int x = JOptionPane.showConfirmDialog(this, msg, "Do you wish to continue?",JOptionPane.YES_NO_OPTION);
         if (x!=0)
@@ -2096,8 +2265,10 @@ public class MTMS_GUI extends javax.swing.JFrame {
             tbxError.setText(TC.err);
             return;
         }
-        String key = tbxTSearch.getText().trim().replace("'", "");
-        int Method  = cbxTSearchType.getSelectedIndex();
+        //String key = tbxTSearch.getText().trim().replace("'", "");
+        //int Method  = cbxTSearchType.getSelectedIndex();
+        String key = String.valueOf(tid);
+        int Method = 0;
         SearchTests(Method, key);
         tbxError.setText("Updated Test #" + tid +" successfully.");
         int t = tblTests.getSelectedRow();
@@ -2242,25 +2413,23 @@ public class MTMS_GUI extends javax.swing.JFrame {
         if (td.trim().equals(""))
             td = "(empty)";
         boolean flag = false;
-        if (!chxResultF.isSelected())
+        flag = TC.FinishTest(tid, td, ThisUser.UserID);
+        if (flag)
         {
-            flag = TC.FinishTest(tid, td, ThisUser.UserID);
-            if (flag)
+            ArrayList temp = TC.SearchTest(tid, "Test");
+            if (temp.size()<=0)
             {
-                ArrayList temp = TC.SearchTest(tid, "Test");
-                if (temp.size()<=0)
-                {
-                    tbxError.setText(TC.err);
-                    RenderRR(new Test());
-                    return;
-                }
-                Test t = (Test)temp.get(0);
-                RenderRR(t);
-                tbxError.setText("Test finished.");
-            }
-            else
                 tbxError.setText(TC.err);
+                RenderRR(new Test());
+                return;
+            }
+            Test t = (Test)temp.get(0);
+            RenderRR(t);
+            SearchTests(0, String.valueOf(tid));
+            tbxError.setText("Test finished.");
         }
+        else
+            tbxError.setText(TC.err);
     }//GEN-LAST:event_btnInputResultActionPerformed
 
     //Fill in a result from a test
@@ -2286,6 +2455,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
     //Update a report
     private void btnInputReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInputReportActionPerformed
         // TODO add your handling code here:
+        if (btnClearReport.isEnabled()) return;
         Test_Controller TC = new Test_Controller("localhost", DBName, DBAccount, DBPwd);
         int tid = SelectedTest.TestID;
         if (ThisUser.UserType == User.U_Types.LABTECH)
@@ -2314,25 +2484,23 @@ public class MTMS_GUI extends javax.swing.JFrame {
         if (tr.trim().equals(""))
             tr = "(empty)";
         boolean flag = false;
-        if (!chxReportF.isSelected())
+        flag = TC.ReportTest(tid, tr, ThisUser.UserID);
+        if (flag)
         {
-            flag = TC.ReportTest(tid, tr, ThisUser.UserID);
-            if (flag)
+            ArrayList temp = TC.SearchTest(tid, "Test");
+            if (temp.size()<=0)
             {
-                ArrayList temp = TC.SearchTest(tid, "Test");
-                if (temp.size()<=0)
-                {
-                    tbxError.setText(TC.err);
-                    RenderRR(new Test());
-                    return;
-                }
-                Test t = (Test)temp.get(0);
-                RenderRR(t);
-                tbxError.setText("Test reported.");
-            }
-            else
                 tbxError.setText(TC.err);
+                RenderRR(new Test());
+                return;
+            }
+            Test t = (Test)temp.get(0);
+            RenderRR(t);
+            SearchTests(0, String.valueOf(tid));
+            tbxError.setText("Test reported.");
         }
+        else
+            tbxError.setText(TC.err);
     }//GEN-LAST:event_btnInputReportActionPerformed
 
     //Search a user
@@ -2387,21 +2555,47 @@ public class MTMS_GUI extends javax.swing.JFrame {
             tbxError.setText("Reserved user ID.");
             return ;
         }
-        
-        String fn = tbxUFirstName.getText().trim().replace("'", "");
-        if (fn.equals(""))
+
+        Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
+        String fn = tbxUFirstName.getText().trim();
+        if (!namepattern.matcher(fn).matches())
         {
-            tbxError.setText("Empty first name.");
+            tbxError.setText("Invalid first name.");
+            lblUHint.setText("Unacceptable first name.");
+            lblUHint.setVisible(true);
             return ;
         }
-        String ln = tbxULastName.getText().trim().replace("'", "");
-        if (ln.equals(""))
+        fn = fn.replace("'", "\\'");
+        String ln = tbxULastName.getText().trim();
+        if (!namepattern.matcher(ln).matches())
         {
-            tbxError.setText("Empty last name.");
+            tbxError.setText("Invalid last name.");
+            lblUHint.setText("Unacceptable last name.");
+            lblUHint.setVisible(true);
             return ;
         }
+        ln = ln.replace("'", "\\'"); 
+        Pattern pattern = Pattern.compile("[0-9]{4}/[0-9]{2}/[0-9]{2}");
+        Pattern pattern2 = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date bd = new Date();
+        String tbd = tbxUBirthDate.getText();
+        if (pattern.matcher(tbd).matches())
+        {
+            //bd = sdf.parse(tbxBirthDate.getText());
+            sdf = new SimpleDateFormat("yyyy/MM/dd");
+        }
+        else if (pattern2.matcher(tbd).matches())
+        {
+            sdf = new SimpleDateFormat("MM/dd/yyyy");
+        }
+        else
+        {
+            tbxError.setText("Invalid birthdate.");
+            lblUHint.setText("Wrong Format. Example: "+"2000/01/01");
+            lblUHint.setVisible(true);
+            return ;
+        }
         try
         {
             bd = sdf.parse(tbxUBirthDate.getText());
@@ -2413,15 +2607,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblUHint.setVisible(true);
             return ;
         }
-        String Address = tbxUAddress1.getText().replace("'", "").replace(";", "");
+        String Address = tbxUAddress1.getText().replace("'", "\\'").replace(";", "");
         Address +=";";
-        Address += tbxUAddress2.getText().replace("'", "").replace(";", "");
+        Address += tbxUAddress2.getText().replace("'", "\\'").replace(";", "");
         if (Address.equals(";"))
         {
             tbxError.setText("Empty address.");
             return ;
         }
-        Pattern pattern = Pattern.compile("[0-9]{5}");
+        pattern = Pattern.compile("[0-9]{5}");
         
         String zc = tbxUZipcode.getText().trim().replace("'", "");
         if (!pattern.matcher(zc).matches())
@@ -2441,10 +2635,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblUHint.setVisible(true);
             return ;
         }
-        if (ph.length()<=10)
-        {
-            ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
-        }
+        ph = ph.replace("-", "");
+        ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
         User.U_Types ut = User.U_Types.GUEST;
         switch(cbxUUserType.getSelectedIndex())
         {
@@ -2486,21 +2678,47 @@ public class MTMS_GUI extends javax.swing.JFrame {
             tbxError.setText("Empty user ID.");
             return ;
         }
-        
-        String fn = tbxUFirstName.getText().trim().replace("'", "");
-        if (fn.equals(""))
+
+        Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
+        String fn = tbxUFirstName.getText().trim();
+        if (!namepattern.matcher(fn).matches())
         {
-            tbxError.setText("Empty first name.");
+            tbxError.setText("Invalid first name.");
+            lblUHint.setText("Unacceptable first name.");
+            lblUHint.setVisible(true);
             return ;
         }
-        String ln = tbxULastName.getText().trim().replace("'", "");
-        if (ln.equals(""))
+        fn = fn.replace("'", "\\'");
+        String ln = tbxULastName.getText().trim();
+        if (!namepattern.matcher(ln).matches())
         {
-            tbxError.setText("Empty last name.");
+            tbxError.setText("Invalid last name.");
+            lblUHint.setText("Unacceptable last name.");
+            lblUHint.setVisible(true);
             return ;
         }
+        ln = ln.replace("'", "\\'"); 
+        Pattern pattern = Pattern.compile("[0-9]{4}/[0-9]{2}/[0-9]{2}");
+        Pattern pattern2 = Pattern.compile("[0-9]{2}/[0-9]{2}/[0-9]{4}");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date bd = new Date();
+        String tbd = tbxUBirthDate.getText();
+        if (pattern.matcher(tbd).matches())
+        {
+            //bd = sdf.parse(tbxBirthDate.getText());
+            sdf = new SimpleDateFormat("yyyy/MM/dd");
+        }
+        else if (pattern2.matcher(tbd).matches())
+        {
+            sdf = new SimpleDateFormat("MM/dd/yyyy");
+        }
+        else
+        {
+            tbxError.setText("Invalid birthdate.");
+            lblUHint.setText("Wrong Format. Example: "+"2000/01/01");
+            lblUHint.setVisible(true);
+            return ;
+        }
         try
         {
             bd = sdf.parse(tbxUBirthDate.getText());
@@ -2512,6 +2730,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblUHint.setVisible(true);
             return ;
         }
+        sdf = new SimpleDateFormat("yyyy/MM/dd");
         Date ed = new Date();
         try
         {
@@ -2521,15 +2740,15 @@ public class MTMS_GUI extends javax.swing.JFrame {
         {
         }
         
-        String Address = tbxUAddress1.getText().replace("'", "").replace(";", "");
+        String Address = tbxUAddress1.getText().replace("'", "\\'").replace(";", "");
         Address +=";";
-        Address += tbxUAddress2.getText().replace("'", "").replace(";", "");
+        Address += tbxUAddress2.getText().replace("'", "\\'").replace(";", "");
         if (Address.equals(";"))
         {
             tbxError.setText("Empty address.");
             return ;
         }
-        Pattern pattern = Pattern.compile("[0-9]{5}");
+        pattern = Pattern.compile("[0-9]{5}");
         
         String zc = tbxUZipcode.getText().trim().replace("'", "");
         if (!pattern.matcher(zc).matches())
@@ -2549,10 +2768,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
             lblUHint.setVisible(true);
             return ;
         }
-        if (ph.length()<=10)
-        {
-            ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
-        }
+        ph = ph.replace("-", "");
+        ph = ph.substring(0,3)+"-"+ph.substring(3,6)+"-"+ph.substring(6);
         User.U_Types ut = User.U_Types.GUEST;
         switch(cbxUUserType.getSelectedIndex())
         {
@@ -2647,9 +2864,41 @@ public class MTMS_GUI extends javax.swing.JFrame {
         tbxUPwd.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void tbxErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbxErrorActionPerformed
+    private void btnClearReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearReportActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbxErrorActionPerformed
+        if (SelectedTest.TestID<=0)
+        {
+            tbxReport.setText("");
+            btnInputReport.setEnabled(false);
+            btnClearReport.setEnabled(false);
+            btnFull.setEnabled(false);
+        }
+        else
+        {
+            RenderRR(SelectedTest);
+        }
+    }//GEN-LAST:event_btnClearReportActionPerformed
+
+    private void btnFullActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFullActionPerformed
+        // TODO add your handling code here:
+        if (SelectedTest.TestID<=0)
+        {
+            tbxReport.setText("");
+            btnInputReport.setEnabled(false);
+            btnClearReport.setEnabled(false);
+            btnFull.setEnabled(false);
+        }
+        else
+        {
+            btnInputReport.setEnabled(false);
+            btnClearReport.setEnabled(true);
+            btnFull.setEnabled(false);
+            tbxReport.setText(FullReport(SelectedTest));
+            tbxReport.setLineWrap(true);
+            tbxReport.setWrapStyleWord(true);
+            tbxReport.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_btnFullActionPerformed
 
     public void ClearPInfo()
     {
@@ -2677,8 +2926,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             return;
         }
         if ((ThisUser.UserType!= User.U_Types.ADMIN)&&
-                (p.DoctorID != ThisUser.UserID)&&
-                (ThisUser.UserType!=User.U_Types.DOCTOR))
+                (!p.DoctorID.equals(ThisUser.UserID)))
         {
             tbxError.setText("You are not allowed to see this patient's information.");
             ClearPInfo();
@@ -2701,8 +2949,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
         }
         else
         {
-            tbxAddress1.setText(Addr[0]);
-            tbxAddress2.setText("");
+            tbxPAddress1.setText(Addr[0]);
+            tbxPAddress2.setText("");
         }
         
         tbxPZipcode.setText(p.Zipcode);
@@ -2752,7 +3000,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         }
         else
         {
-            tbxAddress1.setText(ThisUser.Address);
+            tbxAddress1.setText(Addr[0]);
             tbxAddress2.setText("");
         }
         tbxZipcode.setText(ThisUser.Zipcode);
@@ -2864,87 +3112,73 @@ public class MTMS_GUI extends javax.swing.JFrame {
         {
             case "ORDERED":
                 tbxResultStatus.setText("Not updated");
-                tbxPath1.setEditable(true);
                 tbxResult.setText("");
-                btnDLResult.setEnabled(false);
                 btnInputResult.setEnabled(true);
                 
                 tbxReportStatus.setText("Not updated");
-                tbxPath2.setEditable(false);
                 tbxReport.setText("");
-                btnDLReport.setEnabled(false);
                 btnInputReport.setEnabled(false);
+                btnClearReport.setEnabled(false);
+                btnFull.setEnabled(false);
                 break;
             case "FINISHED":
                 if (type1.equals("")||type1.equals("Text"))
                 {
                     tbxResultStatus.setText("Result as Text");
-                    tbxPath1.setEditable(true);
                     tbxResult.setText(t.TestRes);
-                    btnDLResult.setEnabled(false);
                     btnInputResult.setEnabled(true);
                 }
                 else
                 {
                     tbxResultStatus.setText("Result as " + type1);
-                    tbxPath1.setEditable(true);
                     tbxResult.setText("");
-                    btnDLResult.setEnabled(true);
                     btnInputResult.setEnabled(true);
                 }
 
                 tbxReportStatus.setText("Not updated");
-                tbxPath2.setEditable(true);
                 tbxReport.setText("");
-                btnDLReport.setEnabled(false);
                 btnInputReport.setEnabled(true);
+                btnClearReport.setEnabled(false);
+                btnFull.setEnabled(false);
                 break;
             case "REPORTED":
                 if (type1.equals("")||type1.equals("Text"))
                 {
                     tbxResultStatus.setText("Result as Text");
-                    tbxPath1.setEditable(true);
                     tbxResult.setText(t.TestRes);
-                    btnDLResult.setEnabled(false);
                     btnInputResult.setEnabled(true);
                 }
                 else
                 {
                     tbxResultStatus.setText("Result as " + type1);
-                    tbxPath1.setEditable(true);
                     tbxResult.setText("");
-                    btnDLResult.setEnabled(true);
                     btnInputResult.setEnabled(true);
                 }
                 if (type2.equals("")||type2.equals("Text"))
                 {
                     tbxReportStatus.setText("Report as Text");
-                    tbxPath2.setEditable(true);
                     tbxReport.setText(t.Report);
-                    btnDLReport.setEnabled(false);
                     btnInputReport.setEnabled(true);
+                    btnClearReport.setEnabled(false);
+                    btnFull.setEnabled(true);
                 }
                 else
                 {
                     tbxReportStatus.setText("Report as " + type2);
-                    tbxPath2.setEditable(true);
                     tbxReport.setText("");
-                    btnDLReport.setEnabled(true);
                     btnInputReport.setEnabled(true);
                 }
                 break;
             default:
                 tbxResultStatus.setText("Not updated");
-                tbxPath1.setEditable(false);
                 tbxResult.setText("");
-                btnDLResult.setEnabled(false);
                 btnInputResult.setEnabled(false);
                 
                 tbxReportStatus.setText("Not updated");
-                tbxPath2.setEditable(false);
                 tbxReport.setText("");
-                btnDLReport.setEnabled(false);
                 btnInputReport.setEnabled(false);
+                btnClearReport.setEnabled(false);
+                btnFull.setEnabled(false);
                 break;
         }
     }
@@ -2967,6 +3201,13 @@ public class MTMS_GUI extends javax.swing.JFrame {
         if (key.equals(""))
         {
             tbxError.setText("Empty key words.");
+            String[] temp = new String[1];
+            temp[0]="";
+            String[][] row=new String[1][4];
+            String[] column={"Test ID","Patient ID","Doctor ID", "Test Date"};
+            tblTests.removeAll();
+            DefaultTableModel tmd=new DefaultTableModel(row,column);
+            tblTests.setModel(tmd);
             return;
         }
         int id = -1;
@@ -3079,6 +3320,42 @@ public class MTMS_GUI extends javax.swing.JFrame {
         btnTDelete.setEnabled(true);
     }
     
+    public String FullReport(Test t)
+    {
+        if (t.TestID<=0)
+        {
+            return "This is an empty test.";
+        }
+        String temp = "This is a full report of Test # "+PIDtoString(t.TestID)+".\r\n";
+        temp+= "=====================================\r\n\r\n";
+        temp+= "Patient ID: "+PIDtoString(t.PatientID)+"\t\tPatient Name: ";
+        Patient_Controller PC = new Patient_Controller("localhost", DBName, DBAccount, DBPwd);
+        ArrayList tempal = PC.SearchPatient(t.PatientID);
+        String PName = "";
+        if (tempal.size()<=0)
+            PName = "Not a patient";
+        else 
+        {
+            PName = ((Patient)tempal.get(0)).FirstName;
+            PName += " " + ((Patient)tempal.get(0)).LastName;
+        }
+        temp+= PName +"\r\n";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        
+        temp+= "Order Date: "+sdf.format(t.TestDate);
+        temp+= "\r\nOrdered by: "+t.DoctorID;
+        temp+= "\r\nTest Type: "+t.TestType;
+        temp+= "\r\nDescription: "+t.TestDes;
+        temp+= "\r\n=====================================\r\n\r\n";
+        
+        temp+="Last updated by: "+t.LastUpdatedBy;
+        temp+="\r\nTest result:\r\n"+t.TestRes;
+        temp+="\r\n\r\nTest report:\r\n"+t.Report;
+        temp+="\r\n\r\n=====================================";
+        
+        return temp;
+    }
+    
     //Search users
     public void SearchUsers(int Method, String key)
     {
@@ -3161,6 +3438,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             btnUDelete.setEnabled(false);
             btnReset.setEnabled(false);
             tbxUUserID.setEditable(true);
+            btnUAdd.setEnabled(true);
             return;
         }
         tbxUUserID.setText(u.UserID);
@@ -3203,6 +3481,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         btnUUpdate.setEnabled(true);
         btnUDelete.setEnabled(true);
         btnReset.setEnabled(true);
+        btnUAdd.setEnabled(false);
         tbxUUserID.setEditable(false);
     }
     
@@ -3241,14 +3520,12 @@ public class MTMS_GUI extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBrowse1;
-    private javax.swing.JButton btnBrowse2;
     private javax.swing.JButton btnChangePwd;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnDLReport;
-    private javax.swing.JButton btnDLResult;
+    private javax.swing.JButton btnClearReport;
     private javax.swing.JButton btnEditOthers;
     private javax.swing.JButton btnFillResult;
+    private javax.swing.JButton btnFull;
     private javax.swing.JButton btnInputReport;
     private javax.swing.JButton btnInputResult;
     private javax.swing.JButton btnLogout;
@@ -3275,8 +3552,6 @@ public class MTMS_GUI extends javax.swing.JFrame {
     private javax.swing.JComboBox cbxTSearchType;
     private javax.swing.JComboBox cbxUSearchType;
     private javax.swing.JComboBox cbxUUserType;
-    private javax.swing.JCheckBox chxReportF;
-    private javax.swing.JCheckBox chxResultF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3311,9 +3586,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -3326,7 +3599,19 @@ public class MTMS_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -3392,8 +3677,6 @@ public class MTMS_GUI extends javax.swing.JFrame {
     private javax.swing.JTextField tbxPPhone;
     private javax.swing.JTextField tbxPSearch;
     private javax.swing.JTextField tbxPZipcode;
-    private javax.swing.JTextField tbxPath1;
-    private javax.swing.JTextField tbxPath2;
     private javax.swing.JTextField tbxPhone;
     private javax.swing.JTextArea tbxReport;
     private javax.swing.JTextField tbxReportStatus;

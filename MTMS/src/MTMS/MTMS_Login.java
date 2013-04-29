@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package MTMS;
+import java.io.*;
 import javax.swing.JFrame;
 
 /**
@@ -77,7 +78,7 @@ public class MTMS_Login extends javax.swing.JFrame {
         lblError.setForeground(new java.awt.Color(0, 153, 51));
         lblError.setText("Something is wrong. Please retry.");
 
-        btnSetUp.setText(">>");
+        btnSetUp.setText("DB Setup");
         btnSetUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSetUpActionPerformed(evt);
@@ -94,28 +95,26 @@ public class MTMS_Login extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .add(14, 14, 14)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblError)
-                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(layout.createSequentialGroup()
-                                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(jLabel2)
-                                        .add(jLabel1))
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(txtID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(pwfPassword, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                    .add(btnSubmit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                    .add(btnCancel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                        .add(0, 16, Short.MAX_VALUE))
+                    .add(lblError)
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                        .add(layout.createSequentialGroup()
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(jLabel2)
+                                .add(jLabel1))
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(txtID, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(pwfPassword, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
+                            .add(btnSubmit, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(btnCancel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                     .add(layout.createSequentialGroup()
                         .add(jLabel3)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnSetUp, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 90, Short.MAX_VALUE)
+                        .add(btnSetUp, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -157,13 +156,18 @@ public class MTMS_Login extends javax.swing.JFrame {
             lblError.setVisible(true);
             return;
         }
-        pwd = pwfPassword.getText().replace("'", "");
+        pwd = pwfPassword.getText().replace("'", "\\'");
         User_Controller uc = new User_Controller("localhost", DBName, DBAccount, DBPwd);
         User us = uc.ValidateLogin(ID, pwd);
         
         //If no, return.
         if(us==null)
-            {
+        {
+            lblError.setText(uc.err);
+            lblError.setVisible(true);
+        }
+        else if(us.UserID.equals("")||us.UserType == User.U_Types.GUEST)
+        {
             lblError.setText("Invalid user ID or password.");
             lblError.setVisible(true);
         }
@@ -186,6 +190,38 @@ public class MTMS_Login extends javax.swing.JFrame {
         lblError.setVisible(false);
         btnSubmit.getRootPane().setDefaultButton(btnSubmit);
         txtID.requestFocus();
+        
+        DBName = "MTMS";
+        DBAccount = "root";
+        //public String DBPwd = "mysql";
+        DBPwd = "";
+        InputStreamReader reader = null;
+        try
+        {
+            reader = new InputStreamReader(new FileInputStream("./Data/DB.txt"));
+            BufferedReader in = new BufferedReader(reader);
+            String temp;
+            while((temp = in.readLine())!=null)
+            {
+                if (temp.contains("DBName:"))
+                {
+                    DBName = temp.substring(7);
+                }
+                if (temp.contains("DBAccount:"))
+                {
+                    DBAccount= temp.substring(10);
+                }
+                if (temp.contains("DBPwd:"))
+                {
+                    DBPwd = temp.substring(6);
+                }
+            }
+            reader.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    
     }//GEN-LAST:event_formWindowOpened
 
     private void btnSetUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetUpActionPerformed

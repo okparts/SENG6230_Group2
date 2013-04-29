@@ -4,6 +4,7 @@
  */
 package MTMS;
 
+import java.io.*;
 /**
  *
  * @author hguo87
@@ -55,7 +56,6 @@ public class Setup_GUI extends javax.swing.JFrame {
 
         jLabel1.setText("Database Name:");
 
-        tbxDBName.setEditable(false);
         tbxDBName.setText("MTMS");
 
         jLabel2.setText("User Account:");
@@ -78,6 +78,7 @@ public class Setup_GUI extends javax.swing.JFrame {
             }
         });
 
+        tbxError.setBackground(new java.awt.Color(240, 240, 240));
         tbxError.setForeground(new java.awt.Color(0, 153, 51));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -154,7 +155,7 @@ public class Setup_GUI extends javax.swing.JFrame {
         }
         DBName = tbxDBName.getText().replace("'", "").trim();
         DBAccount = tbxDBAccount.getText().replace("'", "").trim();
-        DBPwd = tbxDBPwd.getText().replace("'", "").trim();
+        DBPwd = tbxDBPwd.getText().replace("'", "\\'").trim();
         
         Test_Controller TC = new Test_Controller("localhost",DBName, DBAccount, DBPwd);
         TC.getConnection();
@@ -162,6 +163,34 @@ public class Setup_GUI extends javax.swing.JFrame {
         {
             tbxError.setText("Invalid id/password or connection failed.");
             return;
+        }
+        OutputStreamWriter writer = null;
+        File f = new File("./Data");
+
+        if (!f.exists()) {
+            try
+            {
+                f.mkdirs();
+            }
+            catch(Throwable e){
+            }
+        }
+
+        f = new File("./Data/DB.txt");
+
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            writer = new OutputStreamWriter(new FileOutputStream("./Data/DB.txt"));
+            writer.write("DBName:"+ DBName +"\r\nDBAccount:"+DBAccount+"\r\nDBPwd:"+DBPwd+"\r\n");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         
         if (fromMain == null) return;
@@ -181,6 +210,7 @@ public class Setup_GUI extends javax.swing.JFrame {
         tbxDBName.setText(DBName);
         tbxDBAccount.setText(DBAccount);
         tbxDBPwd.setText(DBPwd);
+        btnOK.getRootPane().setDefaultButton(btnOK);
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed

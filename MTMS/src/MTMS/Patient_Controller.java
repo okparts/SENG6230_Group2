@@ -221,7 +221,8 @@ public class Patient_Controller {
         ArrayList list = uc.SearchUser(DID, "ID");
         if (list.isEmpty()) {this.err = "No such user. ";return false;}
         User doc = (User)list.get(0);
-        if (doc.UserType != User.U_Types.DOCTOR) {this.err = "Not a doctor."; return false;}
+        if (doc.UserType != User.U_Types.DOCTOR&&(doc.UserType != User.U_Types.ADMIN)) 
+        {this.err = "Not a doctor."; return false;}
         
         getConnection();
         if (!Is_Connected)
