@@ -7,16 +7,18 @@ package MTMS;
 /**
  *
  * @author hguo87
+ * comments by Yuan He
+ * 
+ * This is test controller module
  */
 
 
     
-//Comment is used to determine the type of Result and Report.
-        
-//Comment will use the following format:
-//Text,Text     or
-//JPG,PDF
-//First is the type of the result, second is the type of the report.
+/*
+ * attribute comment will 
+ * use the following format: Text,Text or JPG, PDF
+ *  First is the type of the result, second is the type of the report.
+ */
 
 import java.io.*;
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 
 public class Test_Controller {
-    public boolean Is_Connected;
+    public boolean Is_Connected;        //check is connected
     public Connection con;
     public Statement st; 
     public String ConnectionString;
@@ -38,6 +40,7 @@ public class Test_Controller {
         this.err = "";
     }
     
+    //initiate with a customized database connnection string
     public Test_Controller(String cs){
         this.con = null;  
         this.Is_Connected = false;
@@ -45,6 +48,7 @@ public class Test_Controller {
         this.err = "";
     }
     
+    //initiate with a customized database and information
     public Test_Controller(String Host, String DB, String UserID, String PWD){
         this.con = null;  
         this.Is_Connected = false;
@@ -52,6 +56,7 @@ public class Test_Controller {
         this.err = "";
     }  
         
+    // connect to the database
     public void getConnection(){
         this.con = null;  
         try {  
@@ -65,6 +70,9 @@ public class Test_Controller {
         }  
     }
     
+    
+    // search the test by testid or patient
+    // return a tests array list
     public ArrayList SearchTest(int TID, String IDType)
     {
         String sql = "";
@@ -77,6 +85,10 @@ public class Test_Controller {
         return ST(sql);
     }
     
+    /*
+     *  search the test under a doctor 
+     *  return a tests array list
+     */
     public ArrayList SearchTest(String DoctorID)
     {
         String sql = 
@@ -84,7 +96,11 @@ public class Test_Controller {
         return ST(sql);
     }
     
-    public ArrayList ST(String sql){
+    /*
+     *  search the test by a query string 
+     *  return a tests array list
+     */
+    private ArrayList ST(String sql){
         sql += " order by TestDate desc";
         ArrayList list = new ArrayList();
         getConnection();
@@ -138,6 +154,11 @@ public class Test_Controller {
         return list;
     }
     
+    
+    /*
+     *  initiate a test orders
+     *  if success return the testID.
+     */
     public int OrderTest(int PID, String DID, Date TestDate, String TestType, String TestDes)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -149,6 +170,7 @@ public class Test_Controller {
             return -1;
         }
         
+        //set the patient info
         Patient_Controller PC = new Patient_Controller(ConnectionString);
         list = PC.SearchPatient(PID);
         if (list.size()<=0)
@@ -199,6 +221,7 @@ public class Test_Controller {
         }
     }
     
+    //update the a test in the database
     public boolean UpdateTest(int TID, int PID, String DID, Date TestDate, String TestType, String TestDes, String Res, String Rep, String Comm, String UID, String status)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -228,6 +251,8 @@ public class Test_Controller {
             this.err = "Cannot connect to database.";
             return false;
         }
+        
+        //get the update datee
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date1 = sdf.format(TestDate);
         
@@ -255,6 +280,7 @@ public class Test_Controller {
         }
     }
     
+    //update the a test in the database
     public boolean UpdateTest(int TID, String TestType, String TestDes, String UID)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -291,7 +317,8 @@ public class Test_Controller {
             return false;
         }
     }
-
+    
+    //get the comment of some test
     public String GetComment(int TestID)
     {
         String Comm = "";
@@ -318,6 +345,7 @@ public class Test_Controller {
         return Comm;
     }
     
+    // update the test result
     public boolean FinishTest(int TestID, String TestRes, String UID)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -366,6 +394,10 @@ public class Test_Controller {
         }
     }
     
+    
+/*
+ * legacy method, unused
+ *
     public boolean FinishTest(int TestID, FileInputStream f, String FileType, String UID)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -413,6 +445,7 @@ public class Test_Controller {
             return false;
         }
     }
+*/
     
     public boolean ReportTest(int TestID, String Rep, String UID)
     {
@@ -458,6 +491,7 @@ public class Test_Controller {
             return false;
         }
     }
+
     
     public boolean ReportTest(int TestID, FileInputStream f, String FileType, String UID)
     {
@@ -505,6 +539,8 @@ public class Test_Controller {
         }
     }
     
+    
+    //delete the test
     public boolean DeleteTest(int TestID)
     {
         getConnection();
@@ -529,6 +565,7 @@ public class Test_Controller {
         }
     }
     
+    //get test status
     public String GetStatus(int TestID)
     {
         String Status = "NONE";
@@ -555,6 +592,7 @@ public class Test_Controller {
         return Status;
     }
     
+    //get the test result from the test
     public Blob GetResult(int TestID)
     {
         Blob res = null;
@@ -594,6 +632,7 @@ public class Test_Controller {
         return res;
     }
     
+    //get the test report from the test
     public Blob GetReport(int TestID)
     {
         Blob rep = null;

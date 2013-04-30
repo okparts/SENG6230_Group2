@@ -8,18 +8,25 @@ package MTMS;
 /**
  *
  * @author hguo87
+ * comments by Yuan He
+ * 
+ * This is the user class, define user's attribute
  */
 
 import java.util.Date;
 
 public class User {
     
+    // user type
     public enum U_Types{
         GUEST, LABTECH, DOCTOR, ADMIN
     }
     
-    public String UserID;
-    public String FirstName;
+    /*
+     * user information
+     */
+    public String UserID;       
+    public String FirstName;    
     public String LastName;
     public U_Types UserType;
     public Date BirthDate;
@@ -40,6 +47,8 @@ public class User {
         this.PhoneNumber = "000-000-0000";
     }
     
+    
+    //return the user type
     public String getType()
     {
         String role = "";

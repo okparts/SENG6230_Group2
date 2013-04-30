@@ -16,6 +16,9 @@ import javax.swing.table.DefaultTableModel;
  * Created by Hui Guo
  * April, 2013
  * Course Project, CSCI 6230
+ * 
+ * 
+ * comments by Yuan He
  */
 
 public class MTMS_GUI extends javax.swing.JFrame {
@@ -1924,7 +1927,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblPHint.setVisible(false);
         if(tbxPDoctorID.getText().equals(""))
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
         Pattern namepattern = Pattern.compile("^[A-Z][a-zA-Z ,.'-]*$");
@@ -2222,7 +2225,6 @@ public class MTMS_GUI extends javax.swing.JFrame {
 
     //Search tests
     private void btnTSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTSearchActionPerformed
-        // TODO add your handling code here:
         String key = tbxTSearch.getText().trim().replace("'", "");
         int Method  = cbxTSearchType.getSelectedIndex();
         SearchTests(Method, key);
@@ -2243,7 +2245,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             return;
         if(tbxNDoctorID.getText().equals(""))
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
         String tt = tbxTestType.getText().trim().replace("'", "");
@@ -2409,7 +2411,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             if (x!=0)
                 return;
         }
-        String td = tbxResult.getText();
+        String td = tbxResult.getText().replace("'","\\'");
         if (td.trim().equals(""))
             td = "(empty)";
         boolean flag = false;
@@ -2480,7 +2482,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
             if (x!=0)
                 return;
         }
-        String tr = tbxReport.getText();
+        String tr = tbxReport.getText().replace("'","\\'");
         if (tr.trim().equals(""))
             tr = "(empty)";
         boolean flag = false;
@@ -2541,7 +2543,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblUHint.setVisible(false);
         if(ThisUser.UserType!=User.U_Types.ADMIN)
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
         String id = tbxUUserID.getText().trim().replace("'", "");
@@ -2669,7 +2671,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblUHint.setVisible(false);
         if(ThisUser.UserType!=User.U_Types.ADMIN)
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
         String id = tbxUUserID.getText().trim().replace("'", "");
@@ -2834,7 +2836,7 @@ public class MTMS_GUI extends javax.swing.JFrame {
         lblUHint.setVisible(false);
         if(ThisUser.UserType!=User.U_Types.ADMIN)
         {
-            tbxError.setText("Pemission denied.");
+            tbxError.setText("Permission denied.");
             return ;
         }
         String id = tbxUUserID.getText().trim().replace("'", "");

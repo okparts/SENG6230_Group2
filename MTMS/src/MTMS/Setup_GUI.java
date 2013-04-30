@@ -8,7 +8,13 @@ import java.io.*;
 /**
  *
  * @author hguo87
+ * comments by Yuan He
+ * 
+ * This the database setting frame, user can set the database information,
+ * after the use set successfully,the frame will dispose and go back to login
+ * frame
  */
+
 public class Setup_GUI extends javax.swing.JFrame {
 
     /**
@@ -132,6 +138,7 @@ public class Setup_GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //dispose current frame and go to login 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         // TODO add your handling code here:
         if (fromMain == null) return;
@@ -140,7 +147,12 @@ public class Setup_GUI extends javax.swing.JFrame {
         fromMain = null;
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
-
+    
+    
+    /*
+     * set the database with the information from the input, if success, the 
+     * frame will dispose and go back to previous frame 
+    */
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
         // TODO add your handling code here:
         if (tbxDBName.getText().replace("'", "").trim().equals(""))
@@ -157,6 +169,7 @@ public class Setup_GUI extends javax.swing.JFrame {
         DBAccount = tbxDBAccount.getText().replace("'", "").trim();
         DBPwd = tbxDBPwd.getText().replace("'", "\\'").trim();
         
+       //test database connection
         Test_Controller TC = new Test_Controller("localhost",DBName, DBAccount, DBPwd);
         TC.getConnection();
         if (!TC.Is_Connected)
@@ -164,6 +177,8 @@ public class Setup_GUI extends javax.swing.JFrame {
             tbxError.setText("Invalid id/password or connection failed.");
             return;
         }
+        
+        //create a DB.txt to save the database information
         OutputStreamWriter writer = null;
         File f = new File("./Data");
 
@@ -175,7 +190,7 @@ public class Setup_GUI extends javax.swing.JFrame {
             catch(Throwable e){
             }
         }
-
+        
         f = new File("./Data/DB.txt");
 
         if (!f.exists()) {
@@ -205,6 +220,8 @@ public class Setup_GUI extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnOKActionPerformed
 
+    
+    // Initiate the database information to input ui
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         tbxDBName.setText(DBName);
@@ -213,6 +230,7 @@ public class Setup_GUI extends javax.swing.JFrame {
         btnOK.getRootPane().setDefaultButton(btnOK);
     }//GEN-LAST:event_formWindowOpened
 
+    //dispose the current frame and go back to main frame
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         if (fromMain == null) return;

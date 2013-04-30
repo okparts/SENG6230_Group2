@@ -7,6 +7,9 @@ package MTMS;
 /**
  *
  * @author hguo87
+ * 
+ * comments by Yuan He
+ * this is the patient control module
  */
 
 import java.util.ArrayList;
@@ -82,10 +85,10 @@ public class Patient_Controller {
         if (Last .equals("")||First.equals(""))
         {
             String temp = Last+First;
-            sql +="FirstName like '%"+temp+"%' or LastName like '%"+temp+"%'";
+            sql +="FirstName like '"+temp+"%' or LastName like '"+temp+"%'";
         }
         else
-            sql +="FirstName like '%" + First +"%' and LastName like '%" +Last +"%'";
+            sql +="FirstName like '" + First +"%' and LastName like '" +Last +"%'";
         return SP(sql);
     }
     

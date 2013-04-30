@@ -18,15 +18,19 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hguo87
+ * @comments by Yuan He
+ * 
+ * This is the user controller module
  */
 public class User_Controller {
     
-    public boolean Is_Connected;
-    public Connection con;
-    public Statement st; 
+    public boolean Is_Connected;    //status of connection
+    public Connection con;          //database connection
+    public Statement st;            //database statement
     public String ConnectionString;
     public String err;
     
+    //Initiate the the User conroller
     public User_Controller(){
         this.con = null;
         this.Is_Connected = false;
@@ -34,6 +38,7 @@ public class User_Controller {
         this.err = "";
     }
     
+    //Initiate the user controller with a new connection string
     public User_Controller(String cs){
         this.con = null;  
         this.Is_Connected = false;
@@ -41,13 +46,15 @@ public class User_Controller {
         this.err = "";
     }
     
+    //Set the database connection
     public User_Controller(String Host, String DB, String UserID, String PWD){
         this.con = null;  
         this.Is_Connected = false;
         this.ConnectionString = "jdbc:mysql://"+Host+":3306/"+DB+"?user="+UserID+"&password="+PWD;   
         this.err = "";
     }  
-        
+    
+    //check if the system is connectted to database
     public void getConnection(){
         this.con = null;  
         try {  
@@ -61,6 +68,11 @@ public class User_Controller {
         }  
     }
     
+    
+    /*
+     * validate the user infor, if the use info is valid, if success create
+     * a new user.
+    */
     public User ValidateLogin(String UserID, String PWD){
         getConnection();
         if (!Is_Connected)
@@ -91,6 +103,8 @@ public class User_Controller {
                 Is_Connected = false;
                 return null;
             }
+            
+            //get use's information
             temp.FirstName = rs.getString("FirstName");
             temp.LastName = rs.getString("LastName");
             temp.BirthDate = rs.getDate("BirthDate");
@@ -99,6 +113,8 @@ public class User_Controller {
             temp.Zipcode = rs.getString("Zipcode");
             temp.PhoneNumber = rs.getString("PhoneNo");
             String UT = rs.getString("UserType").toUpperCase();
+            
+            //set the user type
             switch (UT)
             {
                 case "LABTEC":
@@ -113,6 +129,8 @@ public class User_Controller {
                 default: temp.UserType = User.U_Types.GUEST;
                     break;
             }
+            
+            //close the connection
             con.close();
             Is_Connected = false;
         }
@@ -124,6 +142,12 @@ public class User_Controller {
         return temp;
     }
     
+    
+    /*  search the user by user id or user name, type is 
+     *  define which kind of search the user want to use.
+     *  The method will return a arraylist of all users match the 
+     *  input.
+     */
     public ArrayList SearchUser(String key, String Type)
     {
         String sql = "";
@@ -162,7 +186,12 @@ public class User_Controller {
         return SU(sql);
     }
     
-    public ArrayList SU(String sql){
+    
+    /*
+     *  Return a arraylist from an input query string to search users
+     *  return a array list of all users from the query result
+     */
+    private ArrayList SU(String sql){
         ArrayList list = new ArrayList();
         getConnection();
         if (!Is_Connected)
@@ -213,6 +242,10 @@ public class User_Controller {
         return list;
     }
     
+    /*
+     *  Change the user's password
+     *  return ture if success.
+     */
     public boolean ChangePassword(String UserID, String OldPwd, String NewPwd)
     {
         User temp = ValidateLogin(UserID, OldPwd);
@@ -244,6 +277,11 @@ public class User_Controller {
         }
     }
     
+    /*
+     *  change the password with a new passoword.
+     *  This method will be called only when the user is admin.
+     *  return true if success.
+     */
     public boolean ChangePassword(String UserID, String NewPwd)
     {
         getConnection();
@@ -268,6 +306,10 @@ public class User_Controller {
         }
     }
     
+    
+    /*  create a user from the input, and  insert to the database
+     *  return true if success.
+     */
     public boolean CreateUser(String UserID, String Pwd, String First, String Last, Date Birth, Date Enroll, String Addr, String Zip, String Phone, User.U_Types UT)
     {
         getConnection();
@@ -311,6 +353,12 @@ public class User_Controller {
         }
     }
     
+    
+    /*
+     *  change the user all information, update the database
+     *  this method can only be used by admin
+     *  return turn if success.
+     */
     public boolean UpdateUser(String UserID, String First, String Last, Date Birth, Date Enroll, String Addr, String Zip, String Phone, User.U_Types UT)
     {
         getConnection();
@@ -360,6 +408,11 @@ public class User_Controller {
         }
     }
     
+    /*
+     *  change the user all information except enroll and type information
+     *  this method can only be used by all uses
+     *  return turn if success.
+     */
     public boolean UpdateUser(String UserID, String First, String Last, Date Birth, String Addr, String Zip, String Phone)
     {
         getConnection();
@@ -392,6 +445,9 @@ public class User_Controller {
         }
     }
     
+    
+    //  delete a user by user ID
+    //  return true if success
     public boolean DeleteUser(String UserID)
     {
         getConnection();

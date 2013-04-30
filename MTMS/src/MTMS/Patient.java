@@ -7,6 +7,9 @@ package MTMS;
 /**
  *
  * @author hguo87
+ * comments by Yuan He
+ * 
+ * This class define patient's attributes
  */
 
 import java.util.Date;
