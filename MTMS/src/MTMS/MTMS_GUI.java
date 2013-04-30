@@ -1755,6 +1755,8 @@ public class MTMS_GUI extends javax.swing.JFrame {
                 pnlNewTest.setVisible(false);
                 pnlReport.setVisible(false);
                 tbpMain.remove(4);
+                jLabel55.setVisible(false);
+                jLabel56.setVisible(false);
                 break;
         }
     }
