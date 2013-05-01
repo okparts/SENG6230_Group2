@@ -8,23 +8,24 @@ import MTMS.User.U_Types;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Yuan He
+ * @author Yuanhe1
  */
-
-
-
 public class User_ControllerTest {
     
     private User testUser;
+    private String testPassword;
     
     public User_ControllerTest() {
+
         testUser = new User();
         testUser.UserID = "testUserDoctor";
         String testPassword = "test";
@@ -49,24 +50,23 @@ public class User_ControllerTest {
         
         User_Controller testConnection = new User_Controller();
         boolean isAddUser = testConnection.CreateUser(testUser.UserID, testPassword, testUser.FirstName, testUser.LastName, testUser.BirthDate, testUser.EnrollDate, testUser.Address, testUser.Zipcode,testUser.PhoneNumber, testUser.UserType);
-
-
-      
     
-    }
-        
-        
-        
     }
     
     @BeforeClass
     public static void setUpClass() {
-
- 
     }
     
     @AfterClass
     public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
     }
 
     /**
@@ -76,9 +76,11 @@ public class User_ControllerTest {
     public void testGetConnection() {
         System.out.println("getConnection");
         User_Controller instance = new User_Controller();
-        instance.getConnection();
+        boolean expResult = true;
+        boolean result = instance.getConnection();
+        assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -152,22 +154,15 @@ public class User_ControllerTest {
     @Test
     public void testCreateUser() {
         System.out.println("CreateUser");
-        String UserID = "";
-        String Pwd = "";
-        String First = "";
-        String Last = "";
-        Date Birth = null;
-        Date Enroll = null;
-        String Addr = "";
-        String Zip = "";
-        String Phone = "";
-        U_Types UT = null;
+        boolean result = false;
         User_Controller instance = new User_Controller();
-        boolean expResult = false;
-        boolean result = instance.CreateUser(UserID, Pwd, First, Last, Birth, Enroll, Addr, Zip, Phone, UT);
+        boolean expResult = true;
+        result = instance.CreateUser(testUser.UserID, testPassword, testUser.FirstName, testUser.LastName, testUser.BirthDate, testUser.EnrollDate, testUser.Address, testUser.Zipcode,testUser.PhoneNumber, testUser.UserType);
+        System.out.println(instance.err);
         assertEquals(expResult, result);
+       
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
