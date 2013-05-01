@@ -1429,6 +1429,11 @@ public class MTMS_GUI extends javax.swing.JFrame {
         jLabel53.setText("User Type:");
 
         cbxUUserType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "LABTECH", "DOCTOR", "ADMIN" }));
+        cbxUUserType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxUUserTypeActionPerformed(evt);
+            }
+        });
 
         btnUAdd.setText("Add");
         btnUAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -2903,6 +2908,10 @@ public class MTMS_GUI extends javax.swing.JFrame {
             tbxReport.setCaretPosition(0);
         }
     }//GEN-LAST:event_btnFullActionPerformed
+
+    private void cbxUUserTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxUUserTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxUUserTypeActionPerformed
 
     public void ClearPInfo()
     {

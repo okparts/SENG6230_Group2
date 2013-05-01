@@ -55,17 +55,21 @@ public class User_Controller {
     }  
     
     //check if the system is connectted to database
-    public void getConnection(){
+    public boolean getConnection(){
+        boolean connect;
         this.con = null;  
         try {  
             Class.forName("com.mysql.jdbc.Driver");
                 this.con = DriverManager.getConnection(ConnectionString);   
                 this.st = (Statement) con.createStatement();
                 this.Is_Connected = true;
+                connect = true;
         } catch (Exception e) {  
             this.err = "Cannot connect to database.";
             this.Is_Connected = false;
+            connect = false;
         }  
+            return connect;
     }
     
     
@@ -312,6 +316,7 @@ public class User_Controller {
      */
     public boolean CreateUser(String UserID, String Pwd, String First, String Last, Date Birth, Date Enroll, String Addr, String Zip, String Phone, User.U_Types UT)
     {
+        boolean check;
         getConnection();
         if (!Is_Connected)
         {
@@ -344,13 +349,14 @@ public class User_Controller {
             pstam.execute();
             con.close();
             Is_Connected = false;
-            return true;
+            check = true;
         }
         catch (SQLException e){
             this.err = "Inserting error.";
             Is_Connected = false;
-            return false;
+            check = false;
         }
+        return check;
     }
     
     

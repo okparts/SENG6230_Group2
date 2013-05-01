@@ -92,7 +92,7 @@ public class Patient_Controller {
         return SP(sql);
     }
     
-    public ArrayList SP(String sql){
+    private ArrayList SP(String sql){
         ArrayList list = new ArrayList();
         getConnection();
         if (!Is_Connected)
@@ -129,6 +129,7 @@ public class Patient_Controller {
         return list;
     }
     
+/*    
     public boolean CreatePatient(int PID, String First, String Last, boolean Gender, Date Birth, String Addr, String Zip, String Phone, String DID)
     {
         User_Controller uc = new User_Controller(ConnectionString);
@@ -166,6 +167,7 @@ public class Patient_Controller {
             return false;
         }
     }
+ */
     
     public int CreatePatient(String First, String Last, boolean Gender, Date Birth, String Addr, String Zip, String Phone, String DID)
     {
