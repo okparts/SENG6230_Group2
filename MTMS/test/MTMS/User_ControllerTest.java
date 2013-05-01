@@ -41,8 +41,8 @@ public class User_ControllerTest {
         testUser.PhoneNumber = "252-412-8187";
         
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-        Date testBirdDay = new Date();
-        Date testEnrollDay = new Date();
+        Date testBirthdDate = new Date();
+        Date testEnrollDate = new Date();
         
         try{
              testUser.BirthDate = sdf.parse("1988/1/1");

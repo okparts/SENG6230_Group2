@@ -18,12 +18,12 @@ public class Patient {
     public int PatientID;
     public String FirstName;
     public String LastName;
-    public boolean Gender; //T for Male and F for Female
+    public boolean Gender;      //T for Male and F for Female
     public Date BirthDate;
     public String Address;
     public String Zipcode;
     public String PhoneNumber;
-    public String DoctorID;
+    public String DoctorID;     // The Patient's Doctor
     
     public Patient(){
         this.PatientID = -1;
