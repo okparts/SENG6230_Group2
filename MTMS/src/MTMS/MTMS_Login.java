@@ -63,12 +63,8 @@ public class MTMS_Login extends javax.swing.JFrame {
         jLabel1.setText("ID:");
         jLabel1.setToolTipText("");
 
-        txtID.setToolTipText("");
-
         jLabel2.setText("Password:");
         jLabel2.setToolTipText("");
-
-        pwfPassword.setToolTipText("");
 
         btnSubmit.setText("Login");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {

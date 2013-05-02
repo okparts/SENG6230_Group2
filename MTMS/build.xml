@@ -10,6 +10,23 @@
 <project name="MTMS" default="default" basedir=".">
     <description>Builds, tests, and runs the project MTMS.</description>
     <import file="nbproject/build-impl.xml"/>
+    <target if="${junit.available}" name="-init-macrodef-junit-init">
+        <condition else="false" property="nb.junit.batch" value="true">
+            <and>
+                <istrue value="${junit.available}"/>
+                <not>
+                    <isset property="test.method"/>
+                </not>
+            </and>
+        </condition>
+        <condition else="false" property="nb.junit.single" value="true">
+            <and>
+                <istrue value="${junit.available}"/>
+                <isset property="test.method"/>
+            </and>
+        </condition>
+    </target>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
