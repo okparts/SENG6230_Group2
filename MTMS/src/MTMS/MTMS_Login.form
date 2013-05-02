@@ -7,7 +7,6 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <Events>
     <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
@@ -97,9 +96,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtID">
-      <Properties>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -108,9 +104,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="pwfPassword">
-      <Properties>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSubmit">
       <Properties>
